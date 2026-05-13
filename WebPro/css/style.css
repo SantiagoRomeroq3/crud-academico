@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Sans+3:wght@400;600;700&display=swap');
+
+.navbar-brand{
+    margin: 0;
+    padding: 0;
+}
+
+
+body{
+    background-color: #f6f4ee;
+    color: #10231c;
+    font-family: 'Source Sans 3', sans-serif;
+}
+.na{
+    margin-left: 25px;
+}
+
+.bg-dark {
+ background-color: #0f2f2e;
+}
+
+
+.navbar-dark .navbar-nav .nav-link {
+    margin-left: 12px;
+    color: #f6f4ee;
+    font-weight: 600;
+}
+
+
+.im{
+    margin-left: 0;
+}
+.navbar-dark .navbar-brand {
+    color: #f6f4ee;
+}
+
+.navbar-brand {
+    display: inline-block;
+    margin-right: 0;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    font-size: 1.25rem;
+    line-height: inherit;
+    white-space: nowrap;
+}
+
+.navbar-toggler{
+    background-color:  #3292a6;
+    margin-left: 0;
+    margin-right: 0;
+}
+input{
+    margin: 10px 0;
+}
+
+button{
+    margin: 6px;
+    padding-left: 20px !important; 
+    padding-right: 20px !important;
+}
+
+.delete_btn{
+    color: #c82333;
+}
+
+.edit_btn{
+    color: #e0a800;
+}
+
+span[onclick]{
+    cursor: pointer;
+}
+
+.text-center {
+    text-align: center!important;
+    margin-top: 90px;
+}
+
+h1.text-center {
+    font-family: 'Playfair Display', serif;
+    letter-spacing: 1px;
+}
+
+.container {
+    max-width: 980px;
+}
+
+.form-group {
+    max-width: 720px;
+    margin: 0 auto;
+}
+
+.table {
+    margin-top: 24px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
+}

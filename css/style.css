@@ -1,0 +1,316 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Sans+3:wght@400;600;700&display=swap');
+
+:root {
+    --ink: #10231c;
+    --paper: #f6f4ee;
+    --accent: #f2994a;
+    --accent-strong: #cf6f1f;
+    --teal: #1e7c74;
+    --navy: #0f2f2e;
+}
+
+body {
+    color: #e8e2d6;
+    font-size: 16px;
+    font-family: 'Source Sans 3', sans-serif;
+    line-height: 1.7;
+    background-color: #0f1f1b;
+}
+
+html, body{
+	height: 100%;
+}
+
+/*img logo--------------------------------------------------------*/
+
+.img-fluid {
+    max-width: 60%;
+    height: auto;
+}
+
+
+/*------------------------------------------------------------------
+    HEADER
+-------------------------------------------------------------------*/
+.navbar-dark .navbar-nav .nav-link{
+	color: #ffffff;
+	letter-spacing: 1px;
+	font-size: 14px;
+	position: relative;
+}
+.navbar-dark .navbar-nav .nav-link:hover{
+	color: #ffffff;
+}
+.navbar-dark .navbar-nav .nav-link.active{
+	font-weight: 600;
+}
+.navbar-dark .navbar-nav .nav-link::after {
+    content: '';
+    width: 0;
+    height: 3px;
+    background: #ffffff;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+	right: 0;
+	text-align: center;
+	margin: 0 auto;
+    border-radius: 0px;
+    z-index: -1;
+}
+.navbar-dark .navbar-nav .nav-link.active::after {
+	width: 50%;
+}
+
+
+/*------------------------------------------------------------------
+    SECTIONS
+-------------------------------------------------------------------*/
+.main-banner{
+	height: 100%;
+	position: relative;
+    padding-top: 90px;
+}
+
+.main-banner{
+	display: table;
+    width: 100%;
+	text-align: center;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.main-banner::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background:
+        radial-gradient(900px 420px at 18% 28%, rgba(242, 153, 74, 0.22), rgba(242, 153, 74, 0) 60%),
+        radial-gradient(760px 360px at 82% 20%, rgba(30, 124, 116, 0.28), rgba(30, 124, 116, 0) 58%);
+    opacity: 1;
+}
+.main-banner::after {
+    content: " ";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background:
+        linear-gradient(135deg, rgba(15, 31, 27, 0.88), rgba(15, 47, 46, 0.66)),
+        linear-gradient(180deg, rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.62));
+    z-index: 0;
+    opacity: 1;
+}
+
+.heading{
+	color: #fff;
+	display: table-cell;
+	vertical-align: middle;
+	position: relative;
+	z-index:1;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+.heading::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: min(900px, calc(100% - 24px));
+    height: auto;
+    min-height: 260px;
+    border-radius: 16px;
+    background: rgba(15, 47, 46, 0.22);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    z-index: -1;
+}
+.heading h1{
+	color: #ffffff;
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 52px;
+    line-height: 1.1;
+    letter-spacing: 1.2px;
+    text-shadow: 0 12px 34px rgba(0, 0, 0, 0.45);
+}
+.heading p{
+	font-size: 18px;
+	padding: 16px 0px 10px;
+    max-width: 700px;
+    margin: 0 auto;
+    color: rgba(255, 255, 255, 0.92);
+}
+
+.hero-actions{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 6px;
+}
+
+.hero-hint{
+    margin-top: 14px;
+    max-width: 520px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.btn-outline-success {
+    align-items: center;
+    color: #ffffff;
+    border-color: var(--accent);
+}
+.btn-outline-success:hover {
+    background-color: var(--accent);
+    color: #ffffff;
+}
+
+/* Primary/secondary buttons on hero */
+.main-banner .btn {
+    padding: 14px 26px;
+    font-size: 18px;
+    border-radius: 8px;
+    font-weight: 700;
+}
+.btn-primary {
+    background: var(--teal);
+    border-color: var(--teal);
+    color: #fff;
+}
+.btn-primary:hover { background: var(--navy); }
+.btn-secondary {
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.18);
+    color: #fff;
+}
+
+@media (max-width: 768px) {
+    .heading h1 { font-size: 40px; letter-spacing: 0.8px; }
+    .heading p { font-size: 16px; }
+    .heading::before { min-height: 300px; }
+    .main-banner .btn { width: 100%; max-width: 340px; }
+}
+
+
+a {
+    color: white;
+    text-decoration: none;
+    background-color: transparent;
+}
+
+.Login-page{
+    display: none;
+}
+
+small, .small {
+    font-size: 80%;
+    font-weight: 400;
+    white-space: pre-wrap;
+}
+
+.text-muted {
+    color: #e2d9c9 !important;
+}
+
+
+/*////////////////////////////////FormRegister***********************************/
+.login-page{
+    height: 100%;
+}
+
+.formRegister{
+    margin-top: 10px;
+    font-family: 'Source Sans 3', sans-serif;
+    color: #fff;
+    display: table-cell;
+    vertical-align: middle;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    z-index:1;
+}
+h2{
+    margin-bottom: 3.5rem;
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 40px;
+    letter-spacing: 2px;    
+    margin-top: 30px;
+    text-transform: none;
+}
+
+.formRegister .form-row {
+    width: 100%;
+    max-width: 420px;
+    margin: 0 auto;
+    align-items: center;
+    display: block;
+}
+
+.formRegister .form-detail .form-row-btn {
+	text-align: center;
+}
+.formRegister .form-detail .input-text {
+	margin-bottom: 20px;
+}
+.formRegister .form-detail input {
+    align-items: center;
+	width: 100%;
+    padding: 3px 3px 3px 3px;
+    border: 2px solid transparent;
+    border-bottom: 2px solid #e5e5e5;
+    appearance: unset;
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    border-radius: 3px;
+    color: #333;
+}
+
+/*under line in input*/
+.formRegister .form-detail .form-row input:focus {
+	border-bottom: 3px solid #fe892a;
+}
+
+/*******************Register btn***********************************************/
+.formRegister .form-detail .register {
+    background: var(--accent);
+    text-align: center;
+	border-radius: 6px;
+	width: 150px;
+	border: none;
+	margin: 11px 0 50px 0px;
+    font-family: 'Source Sans 3', sans-serif;
+	color: white;
+	font-weight: 700;
+	font-size: 18px;
+    padding: 5px;
+}
+.formRegister .form-detail .register:hover {
+    background: var(--accent-strong);
+}
+
+/* select form************************************************************/
+select {
+    height: 45px;
+    width: 100%;
+    color: black;
+    margin-bottom: 35px;
+    border-radius: 3px;
+}
+
+.form-label {
+    display: block;
+    width: 100%;
+    max-width: 420px;
+    margin: 0 auto 8px auto;
+    font-weight: 600;
+    letter-spacing: 0.4px;
+}

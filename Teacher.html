@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Docente</title>
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/Teacher.css">
+  <link rel="stylesheet" href="css/animate.css">
+</head>
+
+<body class="teacher-bg">
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <img src="images/MOODLE_thumbnail.png" width="130" class="im" alt="Moodle">
+      </a>
+
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Abrir menú">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="WebPro/index.html">Gestión</a>
+          </li>
+        </ul>
+
+        <a class="btn btn-outline-light btn-sm" href="WebPro/index.html">Ir a Gestión</a>
+      </div>
+    </div>
+  </nav>
+
+  <section>
+    <div class="container box_1620">
+      <div class="banner_inner d-flex teacher-panel">
+        <div class="banner_content">
+          <div class="media">
+            <div class="d-flex">
+              <img src="images/ic_man1.png" class="imm" alt="Perfil">
+            </div>
+            <div class="media-body">
+              <div class="personal_text">
+                <h6>Hola, soy</h6>
+                <h3 id="profile-name">Docente</h3>
+                <h4 id="profile-role">Docente</h4>
+
+                <p class="teacher-intro" id="profile-bio">
+                  Este es tu panel de docente: gestiona registros en el módulo de Gestión y mantén tu información visible y ordenada.
+                </p>
+
+                <ul class="list basic_info">
+                  <li><strong>Usuario:</strong> <span id="profile-username">—</span></li>
+                  <li><strong>Correo:</strong> <span id="profile-email">—</span></li>
+                </ul>
+
+                <div class="teacher-actions">
+                  <a class="btn btn-primary btn-sm" href="WebPro/index.html">Abrir Gestión (CRUD)</a>
+                  <a class="btn btn-secondary btn-sm" href="index.html">Volver al inicio</a>
+                </div>
+
+                <hr>
+                <p class="helper-text">
+                  Desde <strong>Gestión</strong> puedes crear, editar y eliminar registros. Ideal para mantener datos actualizados rápidamente.
+                </p>
+                <p class="helper-text" id="login-hint">
+                  Si aquí ves guiones (—), primero <a href="Login.html">inicia sesión</a> para cargar tu perfil.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="js/jQuery.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+
+  <script>
+    (function () {
+      function getCurrentUser() {
+        try {
+          var raw = localStorage.getItem('currentUser');
+          return raw ? JSON.parse(raw) : null;
+        } catch (e) {
+          return null;
+        }
+      }
+
+      function initials(name) {
+        if (!name) return '';
+        return name
+          .split(' ')
+          .map(function (s) { return (s || '').trim(); })
+          .filter(Boolean)
+          .map(function (s) { return s[0]; })
+          .slice(0, 2)
+          .join('')
+          .toUpperCase();
+      }
+
+      function setText(id, value) {
+        var el = document.getElementById(id);
+        if (!el) return;
+        el.textContent = value;
+      }
+
+      var u = getCurrentUser();
+      if (!u) return;
+
+      var name = (u.fullName && u.fullName.trim()) ? u.fullName.trim() : (u.username || 'Usuario');
+      setText('profile-name', name);
+      setText('profile-role', u.permetion === 'teacher' ? 'Docente' : 'Estudiante');
+      setText('profile-bio', 'Este es tu panel de docente: gestiona registros en el módulo de Gestión y mantén tu información visible y ordenada.');
+      setText('profile-username', u.username || '');
+      setText('profile-email', u.username || '');
+
+      var hint = document.getElementById('login-hint');
+      if (hint) hint.style.display = 'none';
+
+      var img = document.querySelector('.imm');
+      if (img) {
+        var canvas = document.createElement('canvas');
+        canvas.width = 260;
+        canvas.height = 260;
+        var ctx = canvas.getContext('2d');
+        ctx.fillStyle = '#1e7c74';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        ctx.fillStyle = '#ffffff';
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        ctx.font = '120px "Source Sans 3", sans-serif';
+        ctx.fillText(initials(name), canvas.width / 2, canvas.height / 2 + 8);
+        img.src = canvas.toDataURL('image/png');
+      }
+    })();
+  </script>
+
+</body>
+</html>

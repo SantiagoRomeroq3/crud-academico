@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Sans+3:wght@400;600;700&display=swap');
+
+body{
+    margin: 0px;
+    padding: 0px;
+    background-image: -webkit-linear-gradient(120deg, #0f4c5c 0%, #1b7f79 55%, #f2b880 100%);
+    font-family: 'Source Sans 3', sans-serif;
+    padding-top: 82px;
+}
+
+/* Fondo con imagen existente + overlay para legibilidad */
+.teacher-bg{
+    background-image:
+        linear-gradient(135deg, rgba(15, 31, 27, 0.78), rgba(15, 47, 46, 0.62)),
+        url('../images/69766203_745766495875358_8207489065918922752_n.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.navbar-brand{
+    margin: 0;
+    padding: 0;
+}
+
+.na{
+    margin-left: 25px;
+}
+
+/*.bg-dark {
+ background-image: -webkit-linear-gradient(0deg, #766dff 0%, #88f3ff 100%); !important;
+}*/
+
+
+.navbar-dark .navbar-nav .nav-link {
+    margin-left: 12px;
+    color: white;
+    font-weight: 600;
+}
+
+
+.im{
+    margin: 0;
+}
+.navbar-dark .navbar-brand {
+    color: #ffffff;
+}
+
+.navbar-brand {
+    display: inline-block;
+    margin-right: 0;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    font-size: 1.25rem;
+    line-height: inherit;
+    white-space: nowrap;
+}
+
+.navbar-toggler{
+    background-color:  #3292a6;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.navbar.bg-dark {
+    background: rgba(15, 47, 46, 0.9) !important;
+}
+
+.imm{
+    position: relative;
+    width: 260px;
+    margin-top: 0px;
+    max-width: 100%;
+    height: auto;
+    border-radius: 14px;
+}
+
+
+.media-body{
+    position: relative;
+    margin-top: 20px;
+    margin-left: 0;
+    text-align: center;
+}
+
+
+.teacher-panel{
+    margin-top: 20px;
+    height: auto;
+    padding: 30px;
+    border-radius: 12px;
+    background-color: #ffffff;
+    margin-bottom: 20px;
+}
+
+.teacher-intro{
+    margin: 12px auto 0 auto;
+    max-width: 640px;
+    color: #1b1b1b;
+}
+
+.teacher-actions{
+    margin-top: 14px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.helper-text{
+    margin-top: 12px;
+    color: rgba(0, 0, 0, 0.65);
+    font-size: 14px;
+    max-width: 680px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (max-width: 768px) {
+    .teacher-panel{
+        padding: 20px;
+    }
+    .imm{
+        width: 200px;
+    }
+}
+
+.banner_inner,
+.media {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.personal_text {
+    text-align: center;
+}
+
+.personal_text ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.personal_text li {
+    margin-bottom: 6px;
+}

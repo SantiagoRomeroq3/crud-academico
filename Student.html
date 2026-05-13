@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estudiante</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/Student.css">
+    <link rel="stylesheet" href="css/animate.css">
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <img src="images/MOODLE_thumbnail.png" width="130px" class="im" alt="Moodle">
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Abrir menú">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Inicio</a>
+          </li>
+        </ul>
+        <a class="btn btn-outline-light btn-sm" href="#sec2">Calculadora</a>
+      </div>
+    </div>
+  </nav>
+    
+    <section>
+    <div class="container box_1620">
+      <div class="banner_inner d-flex student-panel">
+        <div class="banner_content">
+          <div class="media">
+            <div class="d-flex">
+              <img src="images/personal-2.jpg" class="imm" alt="Perfil">
+            </div>
+            <div class="media-body">
+              <div class="personal_text">
+                <h6>Hola, soy</h6>
+                <h3 id="profile-name">Estudiante</h3>
+                <h4 id="profile-role">Estudiante</h4>
+
+                <p class="student-intro" id="profile-bio">
+                  Este es tu espacio de estudiante: revisa tu perfil y calcula tu promedio ponderado para organizar tus evaluaciones.
+                </p>
+
+                <ul class="list basic_info">
+                  <li><strong>Usuario:</strong> <span id="profile-username">—</span></li>
+                  <li><strong>Correo:</strong> <span id="profile-email">—</span></li>
+                </ul>
+
+                <div class="student-actions">
+                  <a class="btn btn-primary btn-sm" href="#sec2">Ir a la calculadora</a>
+                  <a class="btn btn-secondary btn-sm" href="index.html">Volver al inicio</a>
+                </div>
+
+                <hr>
+                <p class="helper-text">
+                  Tip: usa la calculadora para estimar tu resultado final. Funciona con porcentajes (10, 20, 30) o con créditos (1, 2, 3), siempre que uses la misma escala en todos los pesos.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+    <section id="sec2">
+    <div class="container box_1620">
+      <div class="banner_inner d-flex student-panel">
+        <div class="banner_content">
+          <div class="media">
+            <div class="form">
+              <h4>Calculadora de promedio ponderado</h4>
+              <p class="helper-text">
+                Ingresa la <strong>nota</strong> y su <strong>peso</strong> (porcentaje o créditos). El cálculo es: (nota1×peso1 + nota2×peso2 + ...) ÷ (peso1 + peso2 + ...).
+              </p>
+
+              <div>
+                <input type="text" inputmode="decimal" id="num1" name="num1" placeholder="Nota 1 (ej: 4.5)">
+                <input type="text" inputmode="decimal" id="num2" name="num2" placeholder="Peso 1 (ej: 30)">
+              </div>
+              <div class="input2">
+                <input type="text" inputmode="decimal" id="num3" name="num3" placeholder="Nota 2 (ej: 3.8)">
+                <input type="text" inputmode="decimal" id="num4" name="num4" placeholder="Peso 2 (ej: 20)">
+              </div>
+              <div>
+                <input type="text" inputmode="decimal" id="num5" name="num5" placeholder="Nota 3">
+                <input type="text" inputmode="decimal" id="num6" name="num6" placeholder="Peso 3">
+              </div>
+              <div>
+                <input type="text" inputmode="decimal" id="num7" name="num7" placeholder="Nota 4">
+                <input type="text" inputmode="decimal" id="num8" name="num8" placeholder="Peso 4">
+              </div>
+
+              <input type="submit" value="Calcular promedio" class="register" onclick="return calculate()">
+            </div>
+
+            <div class="result-panel">
+              <h4 class="text">Resultado</h4>
+              <h3 id="Result" class="Result">—</h3>
+              <p class="helper-text">
+                Si no ingresas pesos (o la suma de pesos es 0), el resultado quedará en “—”.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    function calculate() {
+      function toNumber(value) {
+        if (value === null || value === undefined) return 0;
+        var normalized = String(value).trim().replace(',', '.');
+        var n = parseFloat(normalized);
+        return isNaN(n) ? 0 : n;
+      }
+
+      var n1 = toNumber(document.getElementById("num1").value);
+      var w1 = toNumber(document.getElementById("num2").value);
+      var n2 = toNumber(document.getElementById("num3").value);
+      var w2 = toNumber(document.getElementById("num4").value);
+      var n3 = toNumber(document.getElementById("num5").value);
+      var w3 = toNumber(document.getElementById("num6").value);
+      var n4 = toNumber(document.getElementById("num7").value);
+      var w4 = toNumber(document.getElementById("num8").value);
+
+      var numerator = (n1 * w1) + (n2 * w2) + (n3 * w3) + (n4 * w4);
+      var denominator = (w1 + w2 + w3 + w4);
+
+      var result = document.getElementById("Result");
+      if (!result) return;
+
+      if (!denominator) {
+        result.textContent = "—";
+        return;
+      }
+
+      var avg = numerator / denominator;
+      result.textContent = isFinite(avg) ? avg.toFixed(2) : "—";
+    }
+  </script>
+
+  <script src="js/jQuery.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+
+  <script>
+    (function () {
+      function getCurrentUser() {
+        try {
+          var raw = localStorage.getItem('currentUser');
+          return raw ? JSON.parse(raw) : null;
+        } catch (e) {
+          return null;
+        }
+      }
+
+      function initials(name) {
+        if (!name) return '';
+        return name
+          .split(' ')
+          .map(function (s) { return (s || '').trim(); })
+          .filter(Boolean)
+          .map(function (s) { return s[0]; })
+          .slice(0, 2)
+          .join('')
+          .toUpperCase();
+      }
+
+      function setText(id, value) {
+        var el = document.getElementById(id);
+        if (!el) return;
+        el.textContent = value;
+      }
+
+      var u = getCurrentUser();
+      if (!u) return;
+
+      var name = (u.fullName && u.fullName.trim()) ? u.fullName.trim() : (u.username || 'Usuario');
+      setText('profile-name', name);
+      setText('profile-role', u.permetion === 'teacher' ? 'Docente' : 'Estudiante');
+      setText('profile-bio', 'Este es tu espacio de estudiante: revisa tu perfil y calcula tu promedio ponderado para organizar tus evaluaciones.');
+      setText('profile-username', u.username || '');
+      setText('profile-email', u.username || '');
+
+      var img = document.querySelector('.imm');
+      if (img) {
+        var canvas = document.createElement('canvas');
+        canvas.width = 260;
+        canvas.height = 260;
+        var ctx = canvas.getContext('2d');
+        ctx.fillStyle = '#1e7c74';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        ctx.fillStyle = '#ffffff';
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        ctx.font = '120px "Source Sans 3", sans-serif';
+        ctx.fillText(initials(name), canvas.width / 2, canvas.height / 2 + 8);
+        img.src = canvas.toDataURL('image/png');
+      }
+    })();
+  </script>
+
+</body>
+</html>

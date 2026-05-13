@@ -1,0 +1,19 @@
+{
+  "name": "crud-web-project-master",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Proyecto web estático (HTML/CSS/JS) con CRUD en localStorage.",
+  "scripts": {
+    "lint:js": "eslint \"js/**/*.js\" \"WebPro/js/**/*.js\"",
+    "lint:css": "stylelint \"css/**/*.css\" \"WebPro/css/**/*.css\"",
+    "lint:html": "htmlhint \"*.html\" \"WebPro/*.html\"",
+    "lint": "npm run lint:js && npm run lint:css && npm run lint:html",
+    "test": "node -e \"console.log('No hay pruebas automatizadas todavía.');\""
+  },
+  "devDependencies": {
+    "eslint": "^9.11.1",
+    "htmlhint": "^1.1.4",
+    "stylelint": "^16.10.0",
+    "stylelint-config-standard": "^36.0.1"
+  }
+}

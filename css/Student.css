@@ -1,0 +1,221 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Sans+3:wght@400;600;700&display=swap');
+
+body{
+    margin: 0px;
+    padding: 0px;
+    background-image: -webkit-linear-gradient(120deg, #0f4c5c 0%, #1b7f79 55%, #f2b880 100%);
+    font-family: 'Source Sans 3', sans-serif;
+    padding-top: 82px;
+}
+
+.navbar-brand{
+    margin: 0;
+    padding: 0;
+}
+
+.na{
+    margin-left: 25px;
+}
+
+.bg-dark {
+    background: rgba(15, 47, 46, 0.9) !important;
+}
+
+
+.navbar-dark .navbar-nav .nav-link {
+    margin-left: 12px;
+    color: white;
+    font-weight: 600;
+}
+
+
+.im{
+    margin: 0;
+}
+.navbar-dark .navbar-brand {
+    color: #ffffff;
+}
+
+.navbar-brand {
+    display: inline-block;
+    margin-right: 0;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    font-size: 1.25rem;
+    line-height: inherit;
+    white-space: nowrap;
+}
+
+.navbar-toggler{
+    background-color:  #3292a6;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.imm{
+    position: relative;
+    margin-top: 0px;
+    width: 260px;
+    max-width: 100%;
+    height: auto;
+    border-radius: 14px;
+}
+
+
+.media-body{
+    position: relative;
+    margin-top: 20px;
+    margin-left: 0;
+    text-align: center;
+}
+
+
+.student-panel{
+    margin-top: 20px;
+    height: auto;
+    padding: 30px;
+    border-radius: 12px;
+    background-color: #ffffff;
+    margin-bottom: 70px;
+}
+
+.student-intro{
+    margin: 12px auto 0 auto;
+    max-width: 620px;
+    color: #1b1b1b;
+}
+
+.student-actions{
+    margin-top: 14px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.helper-text{
+    margin-top: 12px;
+    color: rgba(0, 0, 0, 0.65);
+    font-size: 14px;
+    max-width: 680px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.result-panel{
+    margin-top: 18px;
+    text-align: center;
+}
+
+
+
+input[type=text], select, textarea {
+  width: 46%; 
+  padding: 5px;   
+    margin: 5px;
+    background-color: #F1F5F7;
+  border: 1px solid #ccc; 
+  border-radius: 4px; 
+  box-sizing: border-box; 
+  margin-top: 6px; 
+  margin-bottom: 16px;
+  resize: vertical ;
+}
+
+
+.register {
+    background: #f2994a;
+    text-align: center;
+    border-radius: 6px;
+    width: 180px;
+    border: none;
+    margin: 20px auto 0 auto;
+    font-family: 'Source Sans 3', sans-serif;
+    color: white;
+    font-weight: 700;
+    font-size: 18px;
+    padding: 8px;
+    display: block;
+}
+
+
+.text{
+    font-size: 28px;
+    position: relative;
+    margin: 40px auto 0 auto;
+    text-align: center;
+}
+
+.Result{
+    position: relative;
+    margin-top: 20px;
+    margin-left: 0;
+    color: #f2994a;
+    text-align: center;
+}
+
+.form{
+    margin: 0 auto;
+    text-align: center;
+}
+
+
+.form h4{
+    padding-right: 0;
+    margin-bottom: 30px;
+    margin-left: 0;
+}
+
+.banner_inner,
+.media {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Hace la calculadora más “útil” en pantallas anchas */
+@media (min-width: 992px) {
+    #sec2 .media {
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: center;
+        gap: 28px;
+    }
+    #sec2 .form {
+        max-width: 520px;
+    }
+    #sec2 .result-panel {
+        min-width: 240px;
+        margin-top: 0;
+    }
+}
+
+.personal_text {
+    text-align: center;
+}
+
+.personal_text ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.personal_text li {
+    margin-bottom: 6px;
+}
+
+input[type=text], select, textarea {
+  width: 45%;
+  margin: 6px;
+}
+
+@media (max-width: 768px) {
+    input[type=text], select, textarea {
+        width: 100%;
+    }
+    .student-panel {
+        padding: 20px;
+    }
+    .imm{
+        width: 200px;
+    }
+}
